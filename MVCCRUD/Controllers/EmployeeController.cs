@@ -20,7 +20,7 @@ namespace MVCCRUD.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return View(new EmpModel());
         }
 
         /// <summary>
@@ -78,8 +78,10 @@ namespace MVCCRUD.Controllers
 		/// <returns>Returns List of employees</returns>
         public ActionResult Read()
         {
-            List<EmpModel> empList = new List<EmpModel>();
-			empList = EmpDal.Read();
+            List<EmpModel> empList=new List<EmpModel>();
+
+            empList = EmpDal.Read();
+
             return View(empList);
         }
 
