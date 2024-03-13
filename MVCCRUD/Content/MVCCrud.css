@@ -4,15 +4,6 @@
 
 .body-content {
 	margin-top: 55px;
-	background-color: #d8cece;
-	min-height: 590px;
-	border: 1px solid black;
-	z-index: 1000;
-	overflow-y: auto;
-	border-radius: 40px;
-	-webkit-box-shadow: 4px 3px 33px 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 4px 3px 33px 5px rgba(0,0,0,0.75);
-	box-shadow: 4px 3px 33px 5px rgba(0,0,0,0.75);
 }
 
 footer {
@@ -27,10 +18,6 @@ footer {
 	background-color: #332e2e;
 	color: white;
 	border: 1px solid black;
-}
-
-body {
-	background-image: url('../Content/wood.jpg');
 }
 
 td {
