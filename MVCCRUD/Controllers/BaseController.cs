@@ -15,6 +15,7 @@ namespace MVCCRUD.Controllers
 		/// Instance for EmpDAL
 		/// </summary>
 		private EmpDAL _empDal;
+		private UserDAL _userDAL;
 		public EmpDAL EmpDal
 		{
 			get
@@ -27,6 +28,22 @@ namespace MVCCRUD.Controllers
 				else
 				{
 					return _empDal;
+				}
+			}
+		}
+		
+		public UserDAL UserDAL
+		{
+			get
+			{
+				if (_userDAL == null)
+				{
+                    _userDAL = new UserDAL();
+					return _userDAL;
+				}
+				else
+				{
+					return _userDAL;
 				}
 			}
 		}

@@ -9,32 +9,6 @@
 <div id="title">
     <h4>@Html.ActionLink("Create New Employee", "Create", null, new { @class = "btn btn-primary" })</h4>
 </div>
-
-
-@{
-    var grid = new WebGrid(source: Model,
-                           defaultSort: "Name",
-                           rowsPerPage: 10);
-    grid.SortDirection = SortDirection.Ascending;
-}
-@*<div class="col-md-3">
-
-    </div>
-    <div class="col-md-8">
-        <div id="grid" class="table ">
-            @grid.GetHtml(
-                    tableStyle: "grid",
-                    headerStyle: "head",
-                    columns: grid.Columns(
-                    grid.Column("Name", "Name", style: "Name", format: @<text><a href="~/Employee/Details/@item.id">@item.Name</a></text>),
-    grid.Column("Age", format:@<text>@item.age</text>)
-    )
-    )
-        </div>
-
-
-    </div>*@
-
 <table class="table table-bordered">
     <tr>
         <th>

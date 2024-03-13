@@ -1,0 +1,79 @@
+﻿@model MVCCRUD.Models.UserModal
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div id="title">
+    <h3 class="text-center">User</h3>
+</div>
+<style>
+    ol {
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+    }
+
+    li {
+        padding: 2px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.CheckBoxFor(model => model.IsActive, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    @if (Model.Reports != null)
+    {
+        <ol type="">
+            @foreach (var item in Model.Reports)
+            {
+                var id = Convert.ToString(item.Id);
+                string check = Model.ReportRoles.Contains(id) ? "checked" : "";
+                <li>
+                    <div class="form-group">
+                        <lable class="control-label col-md-2">@item.Name</lable>
+                        <div class="col-md-10">
+                            <input type="checkbox" value="@item.Id" @check />
+                        </div>
+                    </div>
+                </li>
+            }
+        </ol>
+    }
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save User" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("DashBoard", "Index", null, new { @class = "btn btn-default" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

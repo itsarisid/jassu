@@ -4,13 +4,18 @@
 }
 <h2 class="text-center">DashBoard</h2>
 <div class="text-center">
-    
-        <div class="form-group">
-            @Html.ActionLink("Create New Employee", "Create",null, new { @class = "btn btn-success" })
-        </div>
-        <div class="form-group ">
-            @Html.ActionLink("Read New Employee", "Read",null, new { @class = "btn btn-danger" })
-        </div>
+
+    <div class="form-group">
+        @Html.ActionLink("Create New Employee", "Create", null, new { @class = "btn btn-success" })
+    </div>
+    <div class="form-group ">
+        @Html.ActionLink("Read New Employee", "Read", null, new { @class = "btn btn-danger" })
+    </div>
+    <hr />
+    <div class="form-group ">
+        <a href="/user/index" class="btn btn-warning">User List</a>
+        
+    </div>
 </div>
 
 

@@ -69,6 +69,20 @@ namespace MVCCRUD.Service
 				return 0;
 			}
 		}
+		
+		public static List<string> GetDBList(object obj)
+		{
+			if (!(obj is DBNull) && obj != null)
+			{
+				var reportRole = GetDBString(obj);
+
+                return reportRole?.Split(',').ToList();
+			}
+			else
+			{
+				return null;
+			}
+		}
 
 		#endregion
 	}
