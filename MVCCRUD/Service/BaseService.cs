@@ -12,7 +12,7 @@ namespace MVCCRUD.Service
 		/// <summary>
 		/// Gets the connection string from the web config
 		/// </summary>
-		private string _connectionString = ConfigurationManager.ConnectionStrings["EmpConnection"].ConnectionString.ToString();
+		private string _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString.ToString();
 
 		/// <summary>
 		/// Instance creation
@@ -23,7 +23,7 @@ namespace MVCCRUD.Service
 			{
 				if (_connectionString == null)
 				{
-					_connectionString = ConfigurationManager.ConnectionStrings["EmpConnection"].ConnectionString.ToString();
+					_connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString.ToString();
 					return _connectionString;
 				}
 				else

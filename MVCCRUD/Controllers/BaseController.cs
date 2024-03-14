@@ -14,23 +14,8 @@ namespace MVCCRUD.Controllers
 		/// <summary>
 		/// Instance for EmpDAL
 		/// </summary>
-		private EmpDAL _empDal;
 		private UserDAL _userDAL;
-		public EmpDAL EmpDal
-		{
-			get
-			{
-				if (_empDal == null)
-				{
-					_empDal = new EmpDAL();
-					return _empDal;
-				}
-				else
-				{
-					return _empDal;
-				}
-			}
-		}
+		
 		
 		public UserDAL UserDAL
 		{
@@ -48,29 +33,6 @@ namespace MVCCRUD.Controllers
 			}
 		}
 
-		/// <summary>
-		/// Instance for EmpModel
-		/// </summary>
-		private EmpModel _empModel;
-		public EmpModel EmpModel
-		{
-			get
-			{
-				if (_empModel == null)
-				{
-					_empModel = new EmpModel();
-					return _empModel;
-				}
-				else
-				{
-					return _empModel;
-				}
-			}
-			set
-			{
-				_empModel = value;
-			}
-		}
 		#endregion
 	}
 }
