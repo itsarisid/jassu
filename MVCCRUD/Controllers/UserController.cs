@@ -25,8 +25,8 @@ namespace MVCCRUD.Controllers
         [HttpPost]
         public ActionResult Create(UserModal modal)
         {
-            
-            return View(modal);
+            UserDAL.Create(modal);
+            return View(new UserModal());
         }
 
         public ActionResult Edit(int id)

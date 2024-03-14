@@ -13,6 +13,19 @@ namespace MVCCRUD.DAL
     {
         #region CRUD
 
+        public int Create(UserModal model)
+        {
+            SqlConnection sqlConnection = new SqlConnection(ConnectionString);
+
+            SqlCommand command = new SqlCommand();
+            command.Connection = sqlConnection;
+            string sqlQuery = String.Format("INSERT INTO [dbo].[User] ([ADUserName],[ReportRoles],[IsActive]) VALUES ('{0}',null,'{1}')", model.Name, model.IsActive);
+            command.CommandText = sqlQuery;
+            sqlConnection.Open();
+            int num = Convert.ToInt32(command.ExecuteScalar());
+            sqlConnection.Close();
+            return num;
+        }
 
         public List<UserModal> UserList()
         {
